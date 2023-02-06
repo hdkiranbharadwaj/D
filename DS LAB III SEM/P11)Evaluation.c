@@ -15,21 +15,13 @@ typedef struct stk STK;
 
 void push(float c, STK *s)
 {
-    if (s->top == 19)
-        printf("Stack full\n");
-    else
-        s->top++;
-    s->item[s->top] = c;
+    s->item[++s->top] = c;
 }
 
 float pop(STK *s)
 {
     float c;
-    if (s->top == -1)
-        printf("Stack empty\n");
-    else
-        c = s->item[s->top];
-    s->top--;
+    c = s->item[s->top--];
     return c;
 }
 
